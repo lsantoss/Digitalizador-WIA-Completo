@@ -1,0 +1,10 @@
+C:\Users\l_san\Documents\GitHub\Digitalizador WIA Completo - WindowsForms\Digitalizador WIA Completo - WindowsForms\bin\Debug\Digitalizador WIA Completo - WindowsForms.exe.config
+C:\Users\l_san\Documents\GitHub\Digitalizador WIA Completo - WindowsForms\Digitalizador WIA Completo - WindowsForms\bin\Debug\Digitalizador WIA Completo - WindowsForms.exe
+C:\Users\l_san\Documents\GitHub\Digitalizador WIA Completo - WindowsForms\Digitalizador WIA Completo - WindowsForms\bin\Debug\Digitalizador WIA Completo - WindowsForms.pdb
+C:\Users\l_san\Documents\GitHub\Digitalizador WIA Completo - WindowsForms\Digitalizador WIA Completo - WindowsForms\obj\Debug\Digitalizador WIA Completo - WindowsForms.csprojAssemblyReference.cache
+C:\Users\l_san\Documents\GitHub\Digitalizador WIA Completo - WindowsForms\Digitalizador WIA Completo - WindowsForms\obj\Debug\Digitalizador_WIA_Completo___WindowsForms.Form1.resources
+C:\Users\l_san\Documents\GitHub\Digitalizador WIA Completo - WindowsForms\Digitalizador WIA Completo - WindowsForms\obj\Debug\Digitalizador_WIA_Completo___WindowsForms.Properties.Resources.resources
+C:\Users\l_san\Documents\GitHub\Digitalizador WIA Completo - WindowsForms\Digitalizador WIA Completo - WindowsForms\obj\Debug\Digitalizador WIA Completo - WindowsForms.csproj.GenerateResource.cache
+C:\Users\l_san\Documents\GitHub\Digitalizador WIA Completo - WindowsForms\Digitalizador WIA Completo - WindowsForms\obj\Debug\Digitalizador WIA Completo - WindowsForms.csproj.CoreCompileInputs.cache
+C:\Users\l_san\Documents\GitHub\Digitalizador WIA Completo - WindowsForms\Digitalizador WIA Completo - WindowsForms\obj\Debug\Digitalizador WIA Completo - WindowsForms.exe
+C:\Users\l_san\Documents\GitHub\Digitalizador WIA Completo - WindowsForms\Digitalizador WIA Completo - WindowsForms\obj\Debug\Digitalizador WIA Completo - WindowsForms.pdb

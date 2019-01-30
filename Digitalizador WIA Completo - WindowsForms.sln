@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digitalizador WIA Completo - WindowsForms", "Digitalizador WIA Completo - WindowsForms\Digitalizador WIA Completo - WindowsForms.csproj", "{96DBFC24-F8C7-4209-A19B-7293C78887A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96DBFC24-F8C7-4209-A19B-7293C78887A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96DBFC24-F8C7-4209-A19B-7293C78887A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96DBFC24-F8C7-4209-A19B-7293C78887A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96DBFC24-F8C7-4209-A19B-7293C78887A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9CDCD38F-53C1-47CB-B1EB-F61BAF2B59D7}
+	EndGlobalSection
+EndGlobal
