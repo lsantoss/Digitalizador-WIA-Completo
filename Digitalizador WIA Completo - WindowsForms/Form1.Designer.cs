@@ -42,20 +42,24 @@
             this.lstScanners = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.btnGerarPDF = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.gboxConfiguracao.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // gboxConfiguracao
             // 
-            this.gboxConfiguracao.Controls.Add(this.btnScanner);
+            this.gboxConfiguracao.Controls.Add(this.groupBox3);
+            this.gboxConfiguracao.Controls.Add(this.groupBox2);
             this.gboxConfiguracao.Controls.Add(this.btnLocalDestino);
-            this.gboxConfiguracao.Controls.Add(this.cbFormato);
             this.gboxConfiguracao.Controls.Add(this.txtLocalDestino);
             this.gboxConfiguracao.Controls.Add(this.txtNomeArquivo);
             this.gboxConfiguracao.Controls.Add(this.lblLocalDestino);
-            this.gboxConfiguracao.Controls.Add(this.lblFomato);
             this.gboxConfiguracao.Controls.Add(this.lblNomeArquivo);
             this.gboxConfiguracao.Controls.Add(this.lblScanners);
             this.gboxConfiguracao.Controls.Add(this.lstScanners);
@@ -68,19 +72,19 @@
             // 
             // btnScanner
             // 
-            this.btnScanner.Location = new System.Drawing.Point(12, 608);
+            this.btnScanner.Location = new System.Drawing.Point(10, 69);
             this.btnScanner.Name = "btnScanner";
-            this.btnScanner.Size = new System.Drawing.Size(206, 44);
+            this.btnScanner.Size = new System.Drawing.Size(188, 23);
             this.btnScanner.TabIndex = 9;
-            this.btnScanner.Text = "Digitalizar";
+            this.btnScanner.Text = "Gerar Imagem";
             this.btnScanner.UseVisualStyleBackColor = true;
             this.btnScanner.Click += new System.EventHandler(this.BtnScanner_Click);
             // 
             // btnLocalDestino
             // 
-            this.btnLocalDestino.Location = new System.Drawing.Point(12, 501);
+            this.btnLocalDestino.Location = new System.Drawing.Point(16, 414);
             this.btnLocalDestino.Name = "btnLocalDestino";
-            this.btnLocalDestino.Size = new System.Drawing.Size(206, 23);
+            this.btnLocalDestino.Size = new System.Drawing.Size(188, 23);
             this.btnLocalDestino.TabIndex = 8;
             this.btnLocalDestino.Text = "Modificar Destino";
             this.btnLocalDestino.UseVisualStyleBackColor = true;
@@ -95,32 +99,31 @@
             "JPEG",
             "TIFF",
             "BMP",
-            "GIF",
-            "PDF"});
-            this.cbFormato.Location = new System.Drawing.Point(12, 407);
+            "GIF"});
+            this.cbFormato.Location = new System.Drawing.Point(10, 39);
             this.cbFormato.Name = "cbFormato";
-            this.cbFormato.Size = new System.Drawing.Size(206, 21);
+            this.cbFormato.Size = new System.Drawing.Size(188, 21);
             this.cbFormato.TabIndex = 7;
             // 
             // txtLocalDestino
             // 
             this.txtLocalDestino.Enabled = false;
-            this.txtLocalDestino.Location = new System.Drawing.Point(12, 475);
+            this.txtLocalDestino.Location = new System.Drawing.Point(16, 388);
             this.txtLocalDestino.Name = "txtLocalDestino";
-            this.txtLocalDestino.Size = new System.Drawing.Size(206, 20);
+            this.txtLocalDestino.Size = new System.Drawing.Size(188, 20);
             this.txtLocalDestino.TabIndex = 6;
             // 
             // txtNomeArquivo
             // 
-            this.txtNomeArquivo.Location = new System.Drawing.Point(12, 337);
+            this.txtNomeArquivo.Location = new System.Drawing.Point(16, 337);
             this.txtNomeArquivo.Name = "txtNomeArquivo";
-            this.txtNomeArquivo.Size = new System.Drawing.Size(206, 20);
+            this.txtNomeArquivo.Size = new System.Drawing.Size(188, 20);
             this.txtNomeArquivo.TabIndex = 5;
             // 
             // lblLocalDestino
             // 
             this.lblLocalDestino.AutoSize = true;
-            this.lblLocalDestino.Location = new System.Drawing.Point(11, 459);
+            this.lblLocalDestino.Location = new System.Drawing.Point(13, 372);
             this.lblLocalDestino.Name = "lblLocalDestino";
             this.lblLocalDestino.Size = new System.Drawing.Size(87, 13);
             this.lblLocalDestino.TabIndex = 4;
@@ -129,7 +132,7 @@
             // lblFomato
             // 
             this.lblFomato.AutoSize = true;
-            this.lblFomato.Location = new System.Drawing.Point(9, 391);
+            this.lblFomato.Location = new System.Drawing.Point(7, 23);
             this.lblFomato.Name = "lblFomato";
             this.lblFomato.Size = new System.Drawing.Size(45, 13);
             this.lblFomato.TabIndex = 3;
@@ -138,7 +141,7 @@
             // lblNomeArquivo
             // 
             this.lblNomeArquivo.AutoSize = true;
-            this.lblNomeArquivo.Location = new System.Drawing.Point(9, 321);
+            this.lblNomeArquivo.Location = new System.Drawing.Point(13, 321);
             this.lblNomeArquivo.Name = "lblNomeArquivo";
             this.lblNomeArquivo.Size = new System.Drawing.Size(89, 13);
             this.lblNomeArquivo.TabIndex = 2;
@@ -147,7 +150,7 @@
             // lblScanners
             // 
             this.lblScanners.AutoSize = true;
-            this.lblScanners.Location = new System.Drawing.Point(6, 31);
+            this.lblScanners.Location = new System.Drawing.Point(13, 31);
             this.lblScanners.Name = "lblScanners";
             this.lblScanners.Size = new System.Drawing.Size(92, 13);
             this.lblScanners.TabIndex = 1;
@@ -156,9 +159,9 @@
             // lstScanners
             // 
             this.lstScanners.FormattingEnabled = true;
-            this.lstScanners.Location = new System.Drawing.Point(7, 47);
+            this.lstScanners.Location = new System.Drawing.Point(16, 47);
             this.lstScanners.Name = "lstScanners";
-            this.lstScanners.Size = new System.Drawing.Size(211, 238);
+            this.lstScanners.Size = new System.Drawing.Size(188, 238);
             this.lstScanners.TabIndex = 0;
             // 
             // groupBox1
@@ -180,6 +183,38 @@
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
+            // btnGerarPDF
+            // 
+            this.btnGerarPDF.Location = new System.Drawing.Point(10, 22);
+            this.btnGerarPDF.Name = "btnGerarPDF";
+            this.btnGerarPDF.Size = new System.Drawing.Size(188, 39);
+            this.btnGerarPDF.TabIndex = 10;
+            this.btnGerarPDF.Text = "Gerar PDF";
+            this.btnGerarPDF.UseVisualStyleBackColor = true;
+            this.btnGerarPDF.Click += new System.EventHandler(this.btnGerarPDF_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.cbFormato);
+            this.groupBox2.Controls.Add(this.lblFomato);
+            this.groupBox2.Controls.Add(this.btnScanner);
+            this.groupBox2.Location = new System.Drawing.Point(6, 446);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(212, 105);
+            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Gerar Arquivo de Imagem";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnGerarPDF);
+            this.groupBox3.Location = new System.Drawing.Point(6, 571);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(212, 73);
+            this.groupBox3.TabIndex = 12;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Gerar Arquivo PDF";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,6 +230,9 @@
             this.gboxConfiguracao.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -214,6 +252,9 @@
         private System.Windows.Forms.ListBox lstScanners;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Button btnGerarPDF;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 

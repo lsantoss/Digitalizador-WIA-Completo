@@ -1,6 +1,5 @@
 ﻿using iTextSharp.text;
 using System;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,6 +20,7 @@ namespace Digitalizador_WIA_Completo___WindowsForms
 
         private void BtnScanner_Click(object sender, EventArgs e)
         {
+            pictureBox.Image = null;
             Task.Factory.StartNew(StartScanning);
         }
 
@@ -34,6 +34,73 @@ namespace Digitalizador_WIA_Completo___WindowsForms
             if (result == DialogResult.OK)
             {
                 txtLocalDestino.Text = folderDlg.SelectedPath;
+            }
+        }
+
+        private void btnGerarPDF_Click(object sender, EventArgs e)
+        {
+            pictureBox.Image = null;
+            Scanner scanner = null;
+
+            this.Invoke(new MethodInvoker(delegate ()
+            {
+                scanner = lstScanners.SelectedItem as Scanner;
+            }));
+
+            if (scanner == null)
+            {
+                MessageBox.Show("Você precisa selecionar uma scanner na lista!", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if (String.IsNullOrEmpty(txtNomeArquivo.Text))
+            {
+                MessageBox.Show("Digite um nome para o arquivo!", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            ImageFile imagem = scanner.ScanPNG();
+            string imagemExtensao = ".png";
+            string pathImagem = Path.Combine(txtLocalDestino.Text, txtNomeArquivo.Text + imagemExtensao);
+            string pathArquivoPDF = "D:\\" + txtNomeArquivo.Text + ".pdf";
+
+            if (File.Exists(pathImagem) || File.Exists(pathArquivoPDF))
+            {
+                try
+                {
+                    if (File.Exists(pathImagem))
+                    {
+                        File.Delete(pathImagem);
+                    }
+
+                    if (File.Exists(pathArquivoPDF))
+                    {
+                        File.Delete(pathArquivoPDF);
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Não foi possível sobrepor o documento já existente com o mesmo nome, pois ele pode estar aberto nessa ou em outra aplicação!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            try
+            {
+                using (var document = new Document(PageSize.LETTER, 5f, 5f, 5f, 5f))
+                {
+                    iTextSharp.text.pdf.PdfWriter.GetInstance(document, new System.IO.FileStream(pathArquivoPDF, System.IO.FileMode.Create));
+                    document.Open();
+                    imagem.SaveFile(pathImagem);
+                    iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(pathImagem);
+                    image.ScaleToFit(650f, 780f);
+                    image.Alignment = Element.ALIGN_CENTER;
+                    document.Add(image);
+                    File.Delete(pathImagem);
+                    MessageBox.Show("Documento PDF criado com sucesso!", "Sucesso!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Não foi possível criar arquivo PDF!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -107,11 +174,6 @@ namespace Digitalizador_WIA_Completo___WindowsForms
                         imagem = scanner.ScanGIF();
                         imagemExtensao = ".gif";
                         break;
-
-                    case 5:
-                        ImagesToPdf(scanner);
-                        Process.GetCurrentProcess().Kill();
-                        return;
                 }
             }));
 
@@ -134,50 +196,15 @@ namespace Digitalizador_WIA_Completo___WindowsForms
             }
             else
             {
-                imagem.SaveFile(path);
-                pictureBox.Image = new Bitmap(path);
-                MessageBox.Show("Documento digitalizado com sucesso!", "Sucesso!");
-            }
-        }
-
-        public void ImagesToPdf(Scanner scanner)
-        {
-            ImageFile imagem = scanner.ScanPNG();
-            string imagemExtensao = ".png";
-            string pathImagem = Path.Combine(txtLocalDestino.Text, txtNomeArquivo.Text + imagemExtensao);
-            string pathArquivoPDF = "D:\\" + txtNomeArquivo.Text + ".pdf";
-
-            if (File.Exists(pathImagem) || File.Exists(pathArquivoPDF))
-            {
-                if (File.Exists(pathImagem))
-                {
-                    File.Delete(pathImagem);
-                }
-
-                if (File.Exists(pathArquivoPDF))
-                {
-                    File.Delete(pathArquivoPDF);
-                }
-            }
-
-            using (var document = new Document(PageSize.LETTER, 5f, 5f, 5f, 5f))
-            {
-                iTextSharp.text.pdf.PdfWriter.GetInstance(document, new System.IO.FileStream(pathArquivoPDF, System.IO.FileMode.Create));
-                document.Open();
-
                 try
                 {
-                    imagem.SaveFile(pathImagem);
-                    iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(pathImagem);
-                    image.ScaleToFit(650f, 780f);
-                    image.Alignment = Element.ALIGN_CENTER;
-                    document.Add(image);
-                    File.Delete(pathImagem);
-                    MessageBox.Show("Documento PDF criado com sucesso!", "Sucesso!");
+                    imagem.SaveFile(path);
+                    pictureBox.Image = new Bitmap(path);
+                    MessageBox.Show("Documento digitalizado com sucesso!", "Sucesso!");
                 }
                 catch
                 {
-                    MessageBox.Show("Não foi possível criar o arquivo PDF!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Documento não foi digitalizado!", "Erro!", MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
         }
