@@ -30,26 +30,26 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.gboxConfiguracao = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnGerarPDF = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbFormato = new System.Windows.Forms.ComboBox();
+            this.lblFomato = new System.Windows.Forms.Label();
             this.btnScanner = new System.Windows.Forms.Button();
             this.btnLocalDestino = new System.Windows.Forms.Button();
-            this.cbFormato = new System.Windows.Forms.ComboBox();
             this.txtLocalDestino = new System.Windows.Forms.TextBox();
             this.txtNomeArquivo = new System.Windows.Forms.TextBox();
             this.lblLocalDestino = new System.Windows.Forms.Label();
-            this.lblFomato = new System.Windows.Forms.Label();
             this.lblNomeArquivo = new System.Windows.Forms.Label();
             this.lblScanners = new System.Windows.Forms.Label();
             this.lstScanners = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.btnGerarPDF = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.gboxConfiguracao.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // gboxConfiguracao
@@ -70,6 +70,62 @@
             this.gboxConfiguracao.TabStop = false;
             this.gboxConfiguracao.Text = "Configurações";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnGerarPDF);
+            this.groupBox3.Location = new System.Drawing.Point(6, 571);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(212, 73);
+            this.groupBox3.TabIndex = 12;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Gerar Arquivo PDF";
+            // 
+            // btnGerarPDF
+            // 
+            this.btnGerarPDF.Location = new System.Drawing.Point(10, 22);
+            this.btnGerarPDF.Name = "btnGerarPDF";
+            this.btnGerarPDF.Size = new System.Drawing.Size(188, 39);
+            this.btnGerarPDF.TabIndex = 10;
+            this.btnGerarPDF.Text = "Gerar PDF";
+            this.btnGerarPDF.UseVisualStyleBackColor = true;
+            this.btnGerarPDF.Click += new System.EventHandler(this.btnGerarPDF_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.cbFormato);
+            this.groupBox2.Controls.Add(this.lblFomato);
+            this.groupBox2.Controls.Add(this.btnScanner);
+            this.groupBox2.Location = new System.Drawing.Point(6, 446);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(212, 105);
+            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Gerar Arquivo de Imagem";
+            // 
+            // cbFormato
+            // 
+            this.cbFormato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFormato.FormattingEnabled = true;
+            this.cbFormato.Items.AddRange(new object[] {
+            "PNG",
+            "JPEG",
+            "TIFF",
+            "BMP",
+            "GIF"});
+            this.cbFormato.Location = new System.Drawing.Point(10, 39);
+            this.cbFormato.Name = "cbFormato";
+            this.cbFormato.Size = new System.Drawing.Size(188, 21);
+            this.cbFormato.TabIndex = 7;
+            // 
+            // lblFomato
+            // 
+            this.lblFomato.AutoSize = true;
+            this.lblFomato.Location = new System.Drawing.Point(7, 23);
+            this.lblFomato.Name = "lblFomato";
+            this.lblFomato.Size = new System.Drawing.Size(45, 13);
+            this.lblFomato.TabIndex = 3;
+            this.lblFomato.Text = "Formato";
+            // 
             // btnScanner
             // 
             this.btnScanner.Location = new System.Drawing.Point(10, 69);
@@ -89,21 +145,6 @@
             this.btnLocalDestino.Text = "Modificar Destino";
             this.btnLocalDestino.UseVisualStyleBackColor = true;
             this.btnLocalDestino.Click += new System.EventHandler(this.BtnLocalDestino_Click);
-            // 
-            // cbFormato
-            // 
-            this.cbFormato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFormato.FormattingEnabled = true;
-            this.cbFormato.Items.AddRange(new object[] {
-            "PNG",
-            "JPEG",
-            "TIFF",
-            "BMP",
-            "GIF"});
-            this.cbFormato.Location = new System.Drawing.Point(10, 39);
-            this.cbFormato.Name = "cbFormato";
-            this.cbFormato.Size = new System.Drawing.Size(188, 21);
-            this.cbFormato.TabIndex = 7;
             // 
             // txtLocalDestino
             // 
@@ -128,15 +169,6 @@
             this.lblLocalDestino.Size = new System.Drawing.Size(87, 13);
             this.lblLocalDestino.TabIndex = 4;
             this.lblLocalDestino.Text = "Local de Destino";
-            // 
-            // lblFomato
-            // 
-            this.lblFomato.AutoSize = true;
-            this.lblFomato.Location = new System.Drawing.Point(7, 23);
-            this.lblFomato.Name = "lblFomato";
-            this.lblFomato.Size = new System.Drawing.Size(45, 13);
-            this.lblFomato.TabIndex = 3;
-            this.lblFomato.Text = "Formato";
             // 
             // lblNomeArquivo
             // 
@@ -183,38 +215,6 @@
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
-            // btnGerarPDF
-            // 
-            this.btnGerarPDF.Location = new System.Drawing.Point(10, 22);
-            this.btnGerarPDF.Name = "btnGerarPDF";
-            this.btnGerarPDF.Size = new System.Drawing.Size(188, 39);
-            this.btnGerarPDF.TabIndex = 10;
-            this.btnGerarPDF.Text = "Gerar PDF";
-            this.btnGerarPDF.UseVisualStyleBackColor = true;
-            this.btnGerarPDF.Click += new System.EventHandler(this.btnGerarPDF_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.cbFormato);
-            this.groupBox2.Controls.Add(this.lblFomato);
-            this.groupBox2.Controls.Add(this.btnScanner);
-            this.groupBox2.Location = new System.Drawing.Point(6, 446);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(212, 105);
-            this.groupBox2.TabIndex = 11;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Gerar Arquivo de Imagem";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.btnGerarPDF);
-            this.groupBox3.Location = new System.Drawing.Point(6, 571);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(212, 73);
-            this.groupBox3.TabIndex = 12;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Gerar Arquivo PDF";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,13 +226,14 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Digitalizador WIA Completo - WindowsForms";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.gboxConfiguracao.ResumeLayout(false);
             this.gboxConfiguracao.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }

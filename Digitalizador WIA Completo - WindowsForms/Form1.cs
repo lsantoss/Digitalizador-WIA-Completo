@@ -13,6 +13,10 @@ namespace Digitalizador_WIA_Completo___WindowsForms
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
             ListarScanners();
             txtLocalDestino.Text = "D:\\";
             cbFormato.SelectedIndex = 0;
