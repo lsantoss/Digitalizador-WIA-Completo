@@ -225,7 +225,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Digitalizador WIA Completo - WindowsForms";
+            this.Text = "Digitalizador WIA Completo";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gboxConfiguracao.ResumeLayout(false);
             this.gboxConfiguracao.PerformLayout();
